@@ -1,11 +1,11 @@
-<h1 align="center" style="font-weight: bold;">Implementação de segurança com Spring Security e JWT</h1>
-<p align="center">
+<h1  style="font-weight: bold;">Implementação de segurança com Spring Security e JWT</h1>
+<p>
   <a href="#recursos">Recursos</a> • 
   <a href="#tecnologias">Tecnologias</a> • 
   <a href="#instalar">Instalação</a> •
   <a href="#rotas">API Endpoints</a>
 </p>
-<p align="center">
+<p>
     <b>Este projeto demonstra a implementação de segurança usando Spring Boot 3 e JSON Web Tokens (JWT). Ele oferece recursos para autenticação e autorização de usuários em uma aplicação web.</b>
 </p>
 
@@ -21,7 +21,7 @@
 
 - [Spring Boot 3.2.5] (https://spring.io/projects/spring-boot)
 - [Spring Security] (https://spring.io/projects/spring-security)
-- [H2 Database] (https://www.h2database.com/html/main.html)
+  - [H2 Database] (https://www.h2database.com/html/main.html)
 - [JWT] (https://jwt.io/)
 - [Lombok] (https://projectlombok.org/)
 
@@ -59,6 +59,7 @@ Rotas que precisam de autenticação e autorização ADMIN:
 | <kbd>GET /users</kbd> | Retorna todos usuários cadastrados [request e response details](#get-users-admin) |
 
 <h3 id="post-user-signup">POST /auth/signup</h3>
+
 **REQUEST**
 ```json
 {

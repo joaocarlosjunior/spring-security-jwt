@@ -1,20 +1,23 @@
-<h1  style="font-weight: bold;">Implementação de segurança com Spring Security e JWT</h1>
-<p>
+<h1 align="center" style="font-weight: bold;">Implementação de segurança com Spring Security e JWT</h1>
+<p align="center">
   <a href="#recursos">Recursos</a> • 
   <a href="#tecnologias">Tecnologias</a> • 
   <a href="#instalar">Instalação</a> •
   <a href="#rotas">API Endpoints</a>
 </p>
-<p>
+<p align="center">
     <b>Este projeto demonstra a implementação de segurança usando Spring Boot 3 e JSON Web Tokens (JWT). Ele oferece recursos para autenticação e autorização de usuários em uma aplicação web.</b>
 </p>
 
 <h2 id="recursos">Recursos</h2>
 
 - **Cadastro e Login de Usuário**: Sistema de registro e login de usuários.
+
 - **Autenticação JWT**: Utiliza JSON Web Tokens para autenticar usuários. Permitindo autenticação sem salvar estado.
+
 - **Criptografia de Senha**: Senhas dos usuários são criptografadas usando o algoritmo BCrypt, proporcionando uma camada
   adicional de segurança.
+
 - **Autorização Baseada em Role**: Acesso a rotas e recursos com base nas funções (roles) do usuário.
 
 <h2 id="tecnologias">Tecnologias</h2>
@@ -82,8 +85,8 @@ Rotas que precisam de autenticação e autorização ADMIN:
 ```
 
 <h3 id="post-user-login">POST /auth/login</h3>
-**REQUEST**
 
+**REQUEST**
 ```json
 {
   "email": "email@gmail.com",
@@ -92,7 +95,6 @@ Rotas que precisam de autenticação e autorização ADMIN:
 ```
 
 **RESPONSE**
-
 ```json
 {
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzZWN1cml0eS1qd3QtYXBpIiwiaWF0IjoxNzE0NzYyNzIzLCJleHAiOjE3MTQ3OTg3MjMsInN1YiI6ImVtYWlsQGdtYWlsLmNvbSJ9.mBrdogTyydRMUeuIXwnVWF1n8wl00sBRXZoHzH3aPfw"
@@ -100,8 +102,8 @@ Rotas que precisam de autenticação e autorização ADMIN:
 ```
 
 <h3 id="get-user">GET /users/user</h3>
-**REQUEST HEADER**
 
+**REQUEST HEADER**
 ```json
 {
   "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzZWN1cml0eS1qd3QtYXBpIiwiaWF0IjoxNzE0NzYyNzIzLCJleHAiOjE3MTQ3OTg3MjMsInN1YiI6ImVtYWlsQGdtYWlsLmNvbSJ9.mBrdogTyydRMUeuIXwnVWF1n8wl00sBRXZoHzH3aPfw"
@@ -109,7 +111,6 @@ Rotas que precisam de autenticação e autorização ADMIN:
 ```
 
 **RESPONSE**
-
 ```json
 {
   "firstName": "João",
@@ -120,8 +121,8 @@ Rotas que precisam de autenticação e autorização ADMIN:
 ```
 
 <h3 id="get-users-admin">GET /users</h3>
-**REQUEST HEADER**
 
+**REQUEST HEADER**
 ```json
 {
   "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzZWN1cml0eS1qd3QtYXBpIiwiaWF0IjoxNzE0NzY2MDgzLCJleHAiOjE3MTQ4MDIwODMsInN1YiI6ImpvYW9AZW1haWwuY29tIn0.So9Z0B91jo1A0hbiBE9ELBNyVuAU-_tsZzVGQUlZNGE"
@@ -129,7 +130,6 @@ Rotas que precisam de autenticação e autorização ADMIN:
 ```
 
 **RESPONSE**
-
 ```json
 [
   {

@@ -22,8 +22,8 @@ public class SecurityConfig {
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
 
     public static final String[] ENDPOINTS_WITH_AUTHENTICATION_NOT_REQUIRED = {
-            "/users/login",
-            "/users"
+            "/auth/signup",
+            "/auth/login"
     };
 
     public static final String[] ENDPOINTS_WITH_AUTHENTICATION_REQUIRED = {
@@ -31,11 +31,12 @@ public class SecurityConfig {
     };
 
     public static final String[] ENDPOINTS_USER = {
-            "/users/test/user"
+            "/users/user"
     };
 
     public static final String[] ENDPOINTS_ADMIN = {
-            "/users/test/admin"
+            "/users",
+            "/users/admin"
     };
 
     @Bean

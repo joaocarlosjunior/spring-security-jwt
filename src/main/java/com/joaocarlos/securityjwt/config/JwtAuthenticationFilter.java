@@ -47,12 +47,11 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
                 // Cria um objeto de autenticação do Spring Security
                 Authentication authentication =
-                        new UsernamePasswordAuthenticationToken(user.getUsername(), null, user.getAuthorities());
+                        new UsernamePasswordAuthenticationToken(user, null, user.getAuthorities());
 
                 // Define o objeto de autenticação no contexto de segurança do Spring Security
                 SecurityContextHolder.getContext().setAuthentication(authentication);
 
-                filterChain.doFilter(request, response);
             } catch (Exception e) {
                 handlerExceptionResolver.resolveException(request, response, null, e);
             }

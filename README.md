@@ -22,15 +22,15 @@
 
 <h2 id="tecnologias">Tecnologias</h2>
 
-- [Spring Boot 3.2.5] (https://spring.io/projects/spring-boot)
+- [Spring Boot 3.2.5](https://spring.io/projects/spring-boot)
 
-- [Spring Security] (https://spring.io/projects/spring-security)
+- [Spring Security](https://spring.io/projects/spring-security)
 
-- [H2 Database] (https://www.h2database.com/html/main.html)
+- [H2 Database](https://www.h2database.com/html/main.html)
 
-- [JWT] (https://jwt.io/)
+- [JWT](https://jwt.io/)
 
-- [Lombok] (https://projectlombok.org/)
+- [Lombok](https://projectlombok.org/)
 
 <h2 id="instalar">Instalação</h2>
 

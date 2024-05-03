@@ -18,17 +18,25 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-
 @Entity
 @Table(name = "tbl_user")
 public class User implements UserDetails {
 
     @Id
     @GeneratedValue
+    @Column(nullable = false)
     private Integer id;
+
+    @Column(nullable = false)
     private String firstName;
+
+    @Column(nullable = false)
     private String lastName;
+
+    @Column(unique = true, length = 100, nullable = false)
     private String email;
+
+    @Column(nullable = false)
     private String password;
 
     @Enumerated(EnumType.STRING)

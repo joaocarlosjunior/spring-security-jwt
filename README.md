@@ -6,7 +6,7 @@
   <a href="#rotas">API Endpoints</a>
 </p>
 <p align="center">
-    <b>Este projeto demonstra a implementação de segurança usando Spring Boot 3 e JSON Web Tokens (JWT). Ele oferece recursos para autenticação e autorização de usuários em uma aplicação web.</b>
+    <b>Este projeto demonstra a implementação de segurança em uma aplicação Spring Boot usando Spring Security e JSON Web Tokens (JWT).</b>
 </p>
 
 <h2 id="recursos">Recursos</h2>

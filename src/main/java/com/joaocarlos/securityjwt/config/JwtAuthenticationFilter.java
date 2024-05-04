@@ -33,7 +33,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             @NonNull HttpServletResponse response,
             @NonNull FilterChain filterChain) throws ServletException, IOException {
 
-        if (checkIfEndpointIsNotPublic(request)) {
             String token = recoveryToken(request); // Recupera o token do cabeçalho Authorization da requisição
 
             if (token == null) {
@@ -51,12 +50,10 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
                 // Define o objeto de autenticação no contexto de segurança do Spring Security
                 SecurityContextHolder.getContext().setAuthentication(authentication);
-
+                filterChain.doFilter(request, response);
             } catch (Exception e) {
                 handlerExceptionResolver.resolveException(request, response, null, e);
             }
-        }
-        filterChain.doFilter(request, response);
     }
 
     private String recoveryToken(HttpServletRequest request) {
@@ -65,11 +62,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             return authorizationHeader.replace("Bearer ", "");
         }
         return null;
-    }
-
-    private boolean checkIfEndpointIsNotPublic(HttpServletRequest request) {
-        String requestURI = request.getRequestURI();
-        return !Arrays.asList(SecurityConfig.ENDPOINTS_WITH_AUTHENTICATION_NOT_REQUIRED).contains(requestURI);
     }
 
 }

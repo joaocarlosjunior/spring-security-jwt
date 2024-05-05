@@ -4,6 +4,7 @@ import com.joaocarlos.securityjwt.api.DTO.RecoveryUserDTO;
 import com.joaocarlos.securityjwt.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -25,18 +26,21 @@ public class UserController {
     }
 
     @GetMapping
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @ResponseStatus(HttpStatus.OK)
     public List<RecoveryUserDTO> allUsers(){
         return userService.allUsers();
     }
 
     @GetMapping("/user")
+    @PreAuthorize("hasAuthority('ROLE_USER')")
     @ResponseStatus(HttpStatus.OK)
     public RecoveryUserDTO getUserInfo() {
         return userService.infoUser();
     }
 
     @GetMapping("/admin")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @ResponseStatus(HttpStatus.OK)
     public String getAdminAuthenticationTest() {
         return "Administrador autenticado com sucesso";

@@ -53,7 +53,7 @@ Rotas sem necessidade de autenticação e autorização:
 | <kbd>POST /auth/signup</kbd> | Cria usuário [request e response details](#post-user-signup)     |
 | <kbd>POST /auth/login</kbd>  | Autentica usuário [request e response details](#post-user-login) |
 
-Rotas que precisam de autenticação e autorização USER:
+Rotas que precisam de autenticação e autorização USER e ADMIN:
 
 | rota                       | descrição                                                                    |
 |----------------------------|------------------------------------------------------------------------------|
